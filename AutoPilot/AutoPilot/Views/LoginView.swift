@@ -115,8 +115,10 @@ struct LoginView: View {
                     HStack(spacing: 4) {
                         Text("Don't have an account?")
 
-                        Button("Sign Up") {
-                            showSignup = true
+                        NavigationLink{
+                            SignupView()
+                        } label: {
+                            Text("Sign Up")
                         }
                     }
                     .font(.footnote)
