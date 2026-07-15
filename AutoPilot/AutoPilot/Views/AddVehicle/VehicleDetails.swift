@@ -5,22 +5,18 @@ struct VehicleDetails: View {
 
     @Environment(\.dismiss) private var dismiss
 
-    @State private var brand = "Royal Enfield"
-    @State private var model = "Classic 350"
+    @State private var brand = ""
+    @State private var model = ""
     @State private var year = 2024
     @State private var registrationNumber = ""
 
     @State private var selectedPhoto: PhotosPickerItem?
 
-    let brands = ["Royal Enfield", "Honda", "Yamaha", "KTM"]
-    let models = ["Classic 350", "Hunter 350", "Meteor 350"]
+    let brands = ["Royal Enfield", "Honda", "Yamaha", "KTM", "B M W"]
+    let models = ["Classic 350", "Hunter 350", "Meteor 350", "M 3"]
 
     var body: some View {
-        
-        
-
         ZStack {
-             
             LinearGradient(
                 colors: [
                     .white,
@@ -175,7 +171,7 @@ struct VehicleDetails: View {
                                 )
                             
                             TextField(
-                                "KA 05 JK 1234",
+                                "GJ 00 AA 0000",
                                 text: $registrationNumber
                             )
                         }

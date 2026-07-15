@@ -272,25 +272,38 @@ struct FloatingTabBar: View {
 
     var body: some View {
 
-        HStack {
-
-            TabItem(icon: "house.fill", title: "Home")
-
-            Spacer()
-
-            TabItem(icon: "car.fill", title: "Garage")
-
-            Spacer()
-
-            TabItem(icon: "chart.bar.fill", title: "Insights")
-
-            Spacer()
-
-            TabItem(icon: "gearshape.fill", title: "Settings")
+        NavigationStack {
+            HStack {
+                
+                
+                NavigationLink {
+                    HomeView()
+                } label: {
+                    TabItem(icon: "house.fill", title: "Home")
+                }
+                   
+                    Spacer()
+                
+                NavigationLink{
+                    GarageView()
+                } label: {
+                    TabItem(icon: "car.fill", title: "Garage")
+                }
+                    
+                
+                
+                Spacer()
+                
+                TabItem(icon: "chart.bar.fill", title: "Insights")
+                
+                Spacer()
+                
+                TabItem(icon: "gearshape.fill", title: "Settings")
+            }
+            .padding()
+            .glassCard()
+            .padding()
         }
-        .padding()
-        .glassCard()
-        .padding()
     }
 }
 

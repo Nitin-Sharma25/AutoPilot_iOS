@@ -25,26 +25,8 @@ struct VehicleAdded: View {
                 .ignoresSafeArea()
 
                 // MARK: Glass Blobs
-
-                Circle()
-                    .fill(Color.blue.opacity(0.8))
-                    .frame(width: 220)
-                    .blur(radius: 40)
-                    .offset(x: -140, y: -260)
-                
-
-                Circle()
-                    .fill(Color.cyan.opacity(0.8))
-                    .frame(width: 180)
-                    .blur(radius: 40)
-                    .offset(x: 150, y: -120)
-
-                Circle()
-                    .fill(Color.purple.opacity(0.2))
-                    .frame(width: 250)
-                    .blur(radius: 50)
-                    .offset(x: 0, y: 280)
-
+                    
+                backgroundBubbles()
                 VStack(spacing: 30) {
                     
                     Spacer()
