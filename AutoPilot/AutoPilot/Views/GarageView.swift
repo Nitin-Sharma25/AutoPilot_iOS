@@ -22,18 +22,18 @@ struct GarageView: View {
             imageName: "car"
         ),
         Vehicle(
-            name: "Mitsubishi",
-            model: "Pajero",
+            name: "PORSCHE",
+            model: "9 1 1",
             registration: "Number plate",
             healthScore: 88,
-            imageName: "car.fill"
+            imageName: "porsche"
         ),
         Vehicle(
             name: "Royal Enfield",
             model: "Classic 350",
             registration: "Number plate",
             healthScore: 95,
-            imageName: "motorcycle"
+            imageName: "bike"
         )
     ]
 
@@ -42,7 +42,6 @@ struct GarageView: View {
         NavigationStack {
 
             ZStack {
-
                 backgroundGradient
 
                 ScrollView(showsIndicators: false) {
@@ -64,14 +63,10 @@ struct GarageView: View {
 
                                 NavigationLink {
 
-                                    VehicleDetailsPlaceholderView(
-                                        vehicle: vehicle
-                                    )
+                                    VehicleDetailsView(vehicle: vehicle)
 
                                 } label: {
-                                    GarageVehicleCard(
-                                        vehicle: vehicle
-                                    )
+                                    GarageVehicleCard(vehicle: vehicle)
                                 }
                                 .buttonStyle(.plain)
                             }
@@ -90,12 +85,10 @@ struct GarageView: View {
 
                         Spacer()
 
-                        Button {
-
-                            showAddVehicle = true
+                        NavigationLink {
+                            AddVehicle1()
 
                         } label: {
-
                             Image(systemName: "plus")
                                 .font(.title2.bold())
                                 .frame(width: 64, height: 64)
@@ -207,7 +200,6 @@ struct GarageVehicleCard: View {
 
                 Text(vehicle.model)
                     .foregroundStyle(.secondary)
-
                 Text(vehicle.registration)
                     .font(.caption)
                     .foregroundStyle(.secondary)
