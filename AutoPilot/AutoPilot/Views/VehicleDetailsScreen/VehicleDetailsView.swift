@@ -18,7 +18,6 @@ struct VehicleDetailsView: View {
                 
                 ZStack {
                     
-                    
                     backgroundBubbles()
                     
                     VStack(spacing: 20) {
@@ -41,6 +40,30 @@ struct VehicleDetailsView: View {
                     }
                     .padding()
                 }
+            }
+        }
+    }
+}
+struct VehicleHeaderView: View {
+
+    var body: some View {
+
+        HStack {
+
+            Spacer()
+
+            Text("Vehicle Details")
+                .font(.title3)
+                .fontWeight(.semibold)
+
+            Spacer()
+
+            Button {
+
+            } label: {
+
+                Image(systemName: "ellipsis")
+                    .font(.title3)
             }
         }
     }

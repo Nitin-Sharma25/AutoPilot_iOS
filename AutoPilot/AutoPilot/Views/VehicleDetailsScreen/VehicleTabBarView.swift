@@ -30,7 +30,7 @@ struct VehicleTabBarView: View {
                         .padding(.vertical,10)
                         .background(
                             selectedTab == index ?
-                            Color.cyan.opacity(0.4) :
+                            Color.white.opacity(1) :
                             Color.clear
                         )
                         .clipShape(Capsule())
@@ -39,7 +39,6 @@ struct VehicleTabBarView: View {
         }
         .glassCard()
         .padding(6)
-        .background(.white.opacity(0.15))
         .clipShape(Capsule())
     }
 }

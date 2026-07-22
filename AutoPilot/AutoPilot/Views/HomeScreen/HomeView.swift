@@ -1,3 +1,10 @@
+//
+//  HomeHeader.swift
+//  AutoPilot
+//
+//  Created by Nitin on 14/07/26.
+//
+
 import SwiftUI
 
 // MARK: - HOME VIEW
@@ -86,49 +93,6 @@ struct VehicleStat: View {
     }
 }
 
-// MARK: - QUICK ACTIONS
-
-struct QuickActionsGrid: View {
-
-    let actions: [QuickAction] = [
-        .init(title: "Add Fuel", icon: "fuelpump.fill"),
-        .init(title: "Log Service", icon: "wrench.and.screwdriver.fill"),
-        .init(title: "Expense", icon: "doc.text.fill"),
-        .init(title: "Reminder", icon: "calendar")
-    ]
-
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-
-    var body: some View {
-
-        LazyVGrid(columns: columns, spacing: 16) {
-
-            ForEach(actions) { action in
-
-                Button {
-
-                } label: {
-
-                    VStack(spacing: 12) {
-
-                        Image(systemName: action.icon)
-                            .font(.title2)
-
-                        Text(action.title)
-                            .fontWeight(.medium)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 110)
-                    .glassCard()
-                }
-            }
-        }
-    }
-}
-
 // MARK: - SERVICE CARD
 
 struct UpcomingServiceCard: View {
@@ -161,41 +125,6 @@ struct UpcomingServiceCard: View {
     }
 }
 
-// MARK: - EXPENSE CARD
-
-struct ExpenseSummaryCard: View {
-
-    var body: some View {
-
-        VStack(alignment: .leading, spacing: 12) {
-
-            Text("This Month")
-                .fontWeight(.bold)
-
-            ExpenseRow(title: "Fuel", amount: "₹4,200")
-
-            ExpenseRow(title: "Service", amount: "₹1,500")
-
-            ExpenseRow(title: "Other", amount: "₹800")
-
-            Divider()
-
-            HStack {
-
-                Text("Total")
-
-                Spacer()
-
-                Text("₹6,500")
-                    .fontWeight(.bold)
-            }
-        }
-        .frame(height: 180)
-        .frame(maxWidth: .infinity)
-        .glassCard()
-    }
-}
-
 struct ExpenseRow: View {
 
     let title: String
@@ -211,36 +140,6 @@ struct ExpenseRow: View {
 
             Text(amount)
         }
-    }
-}
-
-// MARK: - ACTIVITY
-
-struct RecentActivityCard: View {
-
-    var body: some View {
-
-        VStack(alignment: .leading, spacing: 16) {
-
-            Text("Recent Activity")
-                .font(.headline)
-
-            ActivityRow(
-                title: "Oil Changed",
-                date: "2 days ago"
-            )
-
-            ActivityRow(
-                title: "Fuel Added",
-                date: "5 days ago"
-            )
-
-            ActivityRow(
-                title: "Tire Pressure Checked",
-                date: "1 week ago"
-            )
-        }
-        .glassCard()
     }
 }
 
@@ -262,47 +161,6 @@ struct ActivityRow: View {
 
             Text(date)
                 .foregroundStyle(.secondary)
-        }
-    }
-}
-
-// MARK: - TAB BAR
-
-struct FloatingTabBar: View {
-
-    var body: some View {
-
-        NavigationStack {
-            HStack {
-                
-                
-                NavigationLink {
-                    HomeView()
-                } label: {
-                    TabItem(icon: "house.fill", title: "Home")
-                }
-                   
-                    Spacer()
-                
-                NavigationLink{
-                    GarageView()
-                } label: {
-                    TabItem(icon: "car.fill", title: "Garage")
-                }
-                    
-                
-                
-                Spacer()
-                
-                TabItem(icon: "chart.bar.fill", title: "Insights")
-                
-                Spacer()
-                
-                TabItem(icon: "gearshape.fill", title: "Settings")
-            }
-            .padding()
-            .glassCard()
-            .padding()
         }
     }
 }
